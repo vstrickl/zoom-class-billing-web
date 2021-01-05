@@ -1,21 +1,29 @@
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+
+const Section = styled.div`
+  margin-bottom: 48px
+`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <h1 class="headingStyles">
+        Welcome!
+        <span class="username"> Vonique </span>
+    </h1>
+    <h3>
+      <Link to="/">Class Name</Link>
+    </h3>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+      <Img />
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <Section>
+      Class day and time
+    </Section>
   </Layout>
 )
 
