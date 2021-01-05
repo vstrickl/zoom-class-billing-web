@@ -9,7 +9,7 @@ const Section = styled.div`
   margin-bottom: 48px
 `
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <h1 class="headingStyles">
         Welcome!
@@ -22,9 +22,34 @@ const IndexPage = () => (
       <Img />
     </div>
     <Section>
-      Class day and time
+      <ul>
+        {data.allStrapiNewClass.edges.map(document => (
+          <li key={document.node.id}>
+            <h2>
+              <Link to={`/${document.node.id}`}>{document.node.classname}</Link>
+            </h2>
+            <Img />
+            <p>{document.node.days} @ {document.node.start}</p>
+          </li>
+        ))}
+      </ul>
     </Section>
   </Layout>
 )
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    allStrapiNewClass {
+      edges {
+        node {
+          id
+          classname
+          days
+          start
+        }
+      }
+    }
+  }
+`
