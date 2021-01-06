@@ -15,20 +15,14 @@ const IndexPage = ({ data }) => (
         Welcome!
         <span class="username"> Vonique </span>
     </h1>
-    <h3>
-      <Link to="/">Class Name</Link>
-    </h3>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Img />
-    </div>
     <Section>
       <ul>
-        {data.allStrapiNewClass.edges.map(document => (
+        {data.allStrapiClassList.edges.map(document => (
           <li key={document.node.id}>
+            <Img fixed={document.node.class_img.childImageSharp.fixed} alt="" />
             <h2>
               <Link to={`/${document.node.id}`}>{document.node.classname}</Link>
             </h2>
-            <Img />
             <p>{document.node.days} @ {document.node.start}</p>
           </li>
         ))}
@@ -41,10 +35,17 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allStrapiNewClass {
+    allStrapiClassList {
       edges {
         node {
           id
+          class_img {
+            childImageSharp {
+              fixed(width: 200, height: 125) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
           classname
           days
           start
