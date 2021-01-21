@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "zoom-class-billing-web",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "A simple billing app for online fitness classes.",
+  "version": "1.0.0",
+  "author": "Vonique Stricklen<vstrickl.git@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^2.26.1",
