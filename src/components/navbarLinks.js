@@ -48,12 +48,12 @@ const NavItem = styled(Link)`
 const NavbarLinks = () => {
   return (
     <div className="navigation">
-    <nav>
-      <NavItem to="/">Home</NavItem>
-      <NavItem to="/">Classes</NavItem>
-      <NavItem to="/studentList">Students</NavItem>
-    </nav>
-  </div>
+      <nav>
+        <NavItem to="/">Home</NavItem>
+        <NavItem to="/">Classes</NavItem>
+        <NavItem to="/studentList">Students</NavItem>
+      </nav>
+    </div>
   )
 }
 

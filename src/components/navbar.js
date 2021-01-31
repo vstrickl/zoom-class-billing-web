@@ -1,11 +1,13 @@
 import React, { useState } from "react"
 import styled from 'styled-components'
 
+import Logo from "./logo"
 import NavbarLinks from "./navbarLinks"
 
 const Navigation = styled.nav`
+  width: 100%;
   height: 10vh;
-  display: flex;
+  display: inline-block;
   background-size: cover;
   background-color: #fff;
   background-position: 50%;
@@ -40,10 +42,13 @@ const Toggle = styled.div`
 `
 
 const Navbox = styled.div`
-  display: flex;
+  display: inline-block;
   height: 100%;
   justify-content: flex-end;
   align-items: center;
+  width: max-content;
+  float: right;
+  transform: translateY(12px);
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -95,6 +100,7 @@ const Navbar = () => {
 
   return (
     <Navigation>
+      <Logo />
       <Toggle
         navbarOpen={navbarOpen}
         onClick={() => setNavbarOpen(!navbarOpen)}
