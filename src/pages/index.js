@@ -1,10 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 
+import { Link } from "gatsby"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
+import { Container } from 'reactstrap';
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import "./index.scss"
 
 const Section = styled.div`
   margin-bottom: 48px
@@ -13,23 +17,25 @@ const Section = styled.div`
 export default function IndexPage({ data }) {
   return (
     <Layout>
-      <h1 class="headingStyles">
-          Welcome!
-          <span class="username"> Vonique </span>
-      </h1>
-      <Section>
-        <ul>
-          {data.allStrapiClassList.edges.map(document => (
-            <li key={document.node.id}>
-              <Img fixed={document.node.class_img.childImageSharp.fixed} alt="" />
-              <h2>
-                <Link to={`/${document.node.id}`}>{document.node.classname}</Link>
-              </h2>
-              <p>{document.node.days} @ {document.node.start}</p>
-            </li>
-          ))}
-        </ul>
-      </Section>
+      <Container className={`wrapper`}>
+        <h1 class="headingStyles">
+            Welcome!
+            <span class="username"> Vonique </span>
+        </h1>
+        <Section>
+          <ul>
+            {data.allStrapiClassList.edges.map(document => (
+              <li key={document.node.id}>
+                <Img fixed={document.node.class_img.childImageSharp.fixed} alt="" />
+                <h2>
+                  <Link to={`/class/${document.node.slug}`}>{document.node.classname}</Link>
+                </h2>
+                <p>{document.node.days} @ {document.node.start}</p>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      </Container>
     </Layout>
   )
 }
@@ -39,7 +45,7 @@ query {
   allStrapiClassList {
     edges {
       node {
-        id
+        slug
         classname
         days
         start

@@ -5,30 +5,46 @@ import Logo from "./logo"
 import NavbarLinks from "./navbarLinks"
 
 const Navigation = styled.nav`
-  width: 100%;
   height: 10vh;
   display: inline-block;
+  border-bottom: 2px solid #33333320;
   background-size: cover;
   background-color: #fff;
   background-position: 50%;
   position: relative;
   justify-content: space-between;
   text-transform: uppercase;
-  border-bottom: 2px solid #33333320;
   margin: 0 auto;
   padding: 20px 40px;
   z-index: 2;
   align-self: center;
-
-  @media (max-width: 768px) {
-    position: sticky;
-    height: 8vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    left: 0;
-    margin: 0;
-  }
+  min-width: 1280px;
+    @media(max-width: 1440px){
+        min-width: 1280px;
+    }
+    @media(max-width: 1280px){
+        width: 1080px;
+        min-width: 1080px;
+    }
+    @media(max-width: 991px){
+        width: 810px;
+        min-width: 810px;
+    }
+    @media (max-width: 768px) {
+      position: sticky;
+      height: 8vh;
+      top: 0;
+      left: 0;
+      right: 0;
+      left: 0;
+      margin: 0;
+      width: 720px;
+      min-width: 720px;
+    }
+    @media(max-width: 480px){
+        width: 360px;
+        min-width: 360px;
+    }
 `
 
 const Toggle = styled.div`
