@@ -1,7 +1,11 @@
-.class-wrapper {
-    margin: 40px;
-}
-
 .class-img {
     padding: 40px;
+}
+
+.class-name {
+    transform: translateY(100px);
+    text-transform: uppercase;
+    size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
