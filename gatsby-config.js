@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Online Fitness Billing App`,
+    title: `Von | Fitness & BJJ (Online)`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -12,9 +12,13 @@ module.exports = {
       options: {
         apiURL: process.env.DEPLOY_URL,
         contentTypes: [
+          "package",
+          "purchase",
           "class-list",
           "new-student",
           "user",
+          "attendance-record",
+          "attendance-date",
         ],
         queryLimit: 1000,
       },

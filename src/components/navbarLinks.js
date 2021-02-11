@@ -49,9 +49,10 @@ const NavbarLinks = () => {
   return (
     <div className="navigation">
       <nav>
-        <NavItem to="/">Home</NavItem>
-        <NavItem to="/">Classes</NavItem>
-        <NavItem to="/studentList">Students</NavItem>
+        <NavItem to="/my-dashboard">Home</NavItem>
+        <NavItem to="/classes">Classes</NavItem>
+        <NavItem to="/students">Students</NavItem>
+        <NavItem to="/">Login</NavItem>
       </nav>
     </div>
   )
